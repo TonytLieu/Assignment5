@@ -55,6 +55,23 @@ func doSquare(n1:Int, completion:(Int)->()){
 }//{} this is a way to put in a func or sometime without the key func
 doSquare(n1: 5, completion: {output in print("doCubes -\(output)")})
 
+enum Apl<T>{
+    case a
+    case b
+    case c
+    
+    func abc()->String{
+        switch self{
+        case .a:
+            return "a"
+        case .b:
+            return "b"
+        case .c:
+            return "c"
+        }
+    }
+}
+print(Apl<Any>.a.abc())
 //MARK: escapaing closure
 func performApiCallTask(completion: @escaping ()->()){// @escaping is used to inform callers of a function that takes a closure that the closure might be stored or otherwise outlive the scope of the receiving function.
     print("1.We are inside performApiCallTask func")
